@@ -1,54 +1,41 @@
 import React from 'react';
-import { ExternalLink, Calendar, Clock, Activity, ShieldCheck } from 'lucide-react';
+import { Search, Bell, Clock, Calendar, ShieldCheck, User } from 'lucide-react';
 
 export default function TopNavbar({ activeTab, deliveryDate }) {
-  const titles = {
-    cockpit: {
-      title: 'Day-Ahead Wind Procurement Cockpit',
-      subtitle: `Gate-closure synchronized forecast vs realized actuals for delivery day ${deliveryDate}`
-    },
-    evaluation: {
-      title: 'Forecast Accuracy & Quantitative Risk Studio',
-      subtitle: 'MAE, RMSE, Trading Bias (+MW), WAPE & Diurnal error distributions across January 2026'
-    },
-    procurement: {
-      title: 'Thermal Dispatch & Balancing Exposure Simulator',
-      subtitle: 'Dynamic wind derating safety margins and wholesale balancing cashout risk model'
-    }
-  };
-
-  const current = titles[activeTab] || titles.cockpit;
-
   return (
-    <nav className="bg-white border-b border-[#E0E9E2] px-6 py-3.5 sticky top-0 z-30 shadow-xs">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <div>
-          <h1 className="text-lg font-bold text-[#1D302B] font-['Plus_Jakarta_Sans'] tracking-tight">
-            {current.title}
-          </h1>
-          <p className="text-xs text-[#75847D] mt-0.5 font-['Inter']">
-            {current.subtitle}
-          </p>
+    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+      {/* Search / Context Pill (Matching image's rounded-full search bar) */}
+      <div className="flex items-center space-x-2.5 bg-white rounded-full px-4 py-2.5 border border-[#E6ECE4] shadow-xs w-full sm:max-w-md">
+        <Search className="w-4 h-4 text-[#75847D] shrink-0" />
+        <span className="text-xs text-[#75847D] font-mono">
+          Elexon BMRS Stream · GB Day-Ahead Wholesale Market (Jan 2026)
+        </span>
+      </div>
+
+      {/* Right Controls & Profile Pill (Matching image's circular action buttons + user pill) */}
+      <div className="flex items-center space-x-2 self-end sm:self-auto">
+        {/* Gate Closure Pill */}
+        <div className="hidden lg:flex items-center space-x-1.5 bg-white rounded-full px-3.5 py-2 border border-[#E6ECE4] shadow-xs text-xs font-mono font-medium text-[#1D302B]">
+          <Clock className="w-3.5 h-3.5 text-[#167D5A]" />
+          <span>Cutoff: <strong>11:00 GMT (D-1)</strong></span>
         </div>
 
-        <div className="flex items-center space-x-3 text-xs">
-          {/* Day-Ahead Gate Notice */}
-          <div className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-[#F7F9F5] border border-[#E0E9E2] text-[#1D302B] font-medium font-mono text-[11px]">
-            <Clock className="w-3.5 h-3.5 text-[#167D5A]" />
-            <span>Auction Cutoff: <strong>11:00 GMT (D-1)</strong></span>
-          </div>
+        {/* Live Grid Icon */}
+        <div className="w-9 h-9 rounded-full bg-white border border-[#E6ECE4] shadow-xs flex items-center justify-center text-[#167D5A]">
+          <ShieldCheck className="w-4 h-4" />
+        </div>
 
-          <a
-            href="https://bmrs.elexon.co.uk"
-            target="_blank"
-            rel="noreferrer"
-            className="hidden md:flex items-center space-x-1 px-3 py-1.5 rounded-lg text-[#167D5A] hover:bg-[#F0F4F1] transition-colors font-medium border border-[#E0E9E2]"
-          >
-            <span>Elexon BMRS</span>
-            <ExternalLink className="w-3 h-3" />
-          </a>
+        {/* Desk Profile Badge (Matching image's user pill) */}
+        <div className="flex items-center space-x-2.5 bg-white rounded-full pl-3 pr-4 py-1.5 border border-[#E6ECE4] shadow-xs">
+          <div className="w-7 h-7 rounded-full bg-[#EAF3EC] text-[#167D5A] flex items-center justify-center font-bold text-xs font-['Plus_Jakarta_Sans']">
+            UK
+          </div>
+          <div className="text-left leading-tight">
+            <span className="text-xs font-bold text-[#1D302B] block font-['Plus_Jakarta_Sans']">Wholesale Desk</span>
+            <span className="text-[10px] text-[#75847D] block -mt-0.5">Procurement Lead</span>
+          </div>
         </div>
       </div>
-    </nav>
+    </div>
   );
 }
