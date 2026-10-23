@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vortexpower-uk-wind:latest
+    container_name: vortexpower_app
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - ELEXON_BASE_URL=https://data.elexon.co.uk/bmrs/api/v1
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
