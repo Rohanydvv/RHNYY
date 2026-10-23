@@ -20,7 +20,7 @@ export default function Sidebar({ activeTab, setActiveTab, onOpenPitch, onOpenTe
   ];
 
   return (
-    <aside className="w-64 lg:w-72 bg-white rounded-[26px] p-5 shadow-[0_4px_24px_rgba(0,0,0,0.03)] border border-[#E6ECE4] flex flex-col justify-between shrink-0 h-[calc(100vh-2.5rem)] sticky top-5 select-none overflow-y-auto">
+    <aside className="w-64 lg:w-72 bg-white rounded-[26px] p-5 shadow-[0_4px_24px_rgba(0,0,0,0.03)] border border-[#E6ECE4] flex flex-col justify-between shrink-0 h-[calc(100vh-2.5rem)] sm:h-[calc(100vh-3rem)] lg:h-[calc(100vh-3.5rem)] sticky top-5 sm:top-6 lg:top-7 select-none overflow-y-auto">
       <div className="space-y-6">
         {/* Brand Header */}
         <div className="flex items-center space-x-3 px-1">
