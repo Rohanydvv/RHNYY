@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   AreaChart, Area, LineChart, Line, XAxis, YAxis, CartesianGrid,
-  Tooltip, Legend, ResponsiveContainer, ReferenceLine
+  Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
 import {
   Flame, ShieldCheck, DollarSign, Sliders, AlertTriangle,
@@ -73,23 +73,23 @@ export default function ProcurementSimulator() {
   return (
     <div className="space-y-6">
       {/* Simulation Controls */}
-      <div className="bg-[#0D1322] border border-slate-800 rounded-xl p-4 sm:p-5 shadow-sm">
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between pb-4 border-b border-slate-800 gap-3">
+      <div className="bg-white border border-[#E0E9E2] rounded-2xl p-4 sm:p-5 shadow-xs">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between pb-4 border-b border-[#E0E9E2] gap-3">
           <div>
             <div className="flex items-center space-x-2">
-              <Flame className="w-4 h-4 text-amber-400" />
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+              <Flame className="w-5 h-5 text-[#167D5A]" />
+              <h3 className="text-base font-bold text-[#1D302B] font-['Plus_Jakarta_Sans']">
                 Thermal Generation Sizing & Balancing Exposure Simulator
               </h3>
             </div>
-            <p className="text-xs text-slate-400 mt-0.5">
-              Determine optimal Day-Ahead thermal procurement schedules beyond weather-dependent wind generation.
+            <p className="text-xs text-[#75847D] mt-0.5">
+              Determine required Day-Ahead thermal procurement schedules beyond weather-dependent wind generation.
             </p>
           </div>
 
           <div className="flex items-center space-x-2 text-xs font-mono">
-            <span className="text-slate-400">Target Delivery:</span>
-            <span className="px-2.5 py-1 rounded bg-[#070A12] border border-slate-800 text-cyan-400 font-semibold">
+            <span className="text-[#75847D]">Delivery:</span>
+            <span className="px-3 py-1.5 rounded-lg bg-[#F0F4F1] border border-[#E0E9E2] text-[#167D5A] font-semibold">
               {deliveryDate}
             </span>
           </div>
@@ -98,23 +98,23 @@ export default function ProcurementSimulator() {
         {/* Input Parameters Matrix */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4 text-xs">
           <div>
-            <label className="block text-slate-400 mb-1 font-medium">Delivery Date</label>
+            <label className="block text-[#75847D] mb-1 font-medium">Delivery Date</label>
             <input
               type="date"
               min="2026-01-01"
               max="2026-01-31"
               value={deliveryDate}
               onChange={(e) => setDeliveryDate(e.target.value)}
-              className="w-full bg-[#070A12] border border-slate-800 rounded-lg px-3 py-2 text-white font-mono"
+              className="w-full bg-[#F7F9F5] border border-[#E0E9E2] rounded-xl px-3 py-2 text-[#1D302B] font-mono focus:outline-none"
             />
           </div>
 
           <div>
-            <label className="block text-slate-400 mb-1 font-medium">Utility Retail Demand Portfolio</label>
+            <label className="block text-[#75847D] mb-1 font-medium">Utility Customer Portfolio</label>
             <select
               value={utilityShare}
               onChange={(e) => setUtilityShare(Number(e.target.value))}
-              className="w-full bg-[#070A12] border border-slate-800 rounded-lg px-3 py-2 text-white font-mono"
+              className="w-full bg-[#F7F9F5] border border-[#E0E9E2] rounded-xl px-3 py-2 text-[#1D302B] font-mono focus:outline-none cursor-pointer"
             >
               <option value={5}>5% UK Market (~1.4–1.8 GW demand)</option>
               <option value={10}>10% UK Market (~2.8–3.6 GW demand)</option>
@@ -124,25 +124,25 @@ export default function ProcurementSimulator() {
           </div>
 
           <div>
-            <label className="block text-slate-400 mb-1 font-medium">Day-Ahead Wholesale Price (£/MWh)</label>
+            <label className="block text-[#75847D] mb-1 font-medium">Day-Ahead Wholesale Price (£/MWh)</label>
             <input
               type="number"
               min="30"
               max="300"
               value={wholesalePrice}
               onChange={(e) => setWholesalePrice(Number(e.target.value))}
-              className="w-full bg-[#070A12] border border-slate-800 rounded-lg px-3 py-2 text-white font-mono"
+              className="w-full bg-[#F7F9F5] border border-[#E0E9E2] rounded-xl px-3 py-2 text-[#1D302B] font-mono focus:outline-none"
             />
           </div>
 
-          {/* Derating Slider Card */}
-          <div className="bg-[#070A12] p-3 rounded-lg border border-slate-800">
+          {/* Derating Slider Card with subtle Fresh Lime highlight tag */}
+          <div className="bg-[#F7F9F5] p-3 rounded-xl border border-[#E0E9E2]">
             <div className="flex items-center justify-between mb-1.5">
-              <span className="font-medium text-slate-300 flex items-center space-x-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
-                <span>Quantified Bias Haircut</span>
+              <span className="font-semibold text-[#1D302B] flex items-center space-x-1">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#167D5A]" />
+                <span>Bias Derating Haircut</span>
               </span>
-              <span className="font-mono text-cyan-400 font-bold bg-slate-900 px-2 py-0.5 rounded border border-slate-700/60">
+              <span className="font-mono text-[#102A24] font-bold bg-[#B8E35A] px-2 py-0.5 rounded text-[11px] shadow-xs">
                 {deratingPct}%
               </span>
             </div>
@@ -153,9 +153,9 @@ export default function ProcurementSimulator() {
               step="1"
               value={deratingPct}
               onChange={(e) => setDeratingPct(Number(e.target.value))}
-              className="w-full h-1 bg-slate-800 rounded appearance-none cursor-pointer accent-cyan-400"
+              className="w-full h-1.5 bg-[#E0E9E2] rounded appearance-none cursor-pointer accent-[#167D5A]"
             />
-            <div className="flex justify-between text-[10px] text-slate-500 font-mono mt-1">
+            <div className="flex justify-between text-[10px] text-[#75847D] font-mono mt-1">
               <span>0% (Raw)</span>
               <span>10% (Desk rec.)</span>
               <span>25%</span>
@@ -167,99 +167,99 @@ export default function ProcurementSimulator() {
       {result && (
         <>
           {/* Executive Dispatch KPIs */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-            <div className="bg-[#0D1322] border border-slate-800 rounded-xl p-4">
-              <span className="text-[10px] uppercase font-medium tracking-wider text-slate-400 block mb-1">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="bg-white border border-[#E0E9E2] rounded-2xl p-5 shadow-xs">
+              <span className="text-[10px] uppercase font-bold tracking-wider text-[#75847D] block mb-1">
                 Consumer Demand Volume
               </span>
-              <div className="flex items-baseline space-x-1.5 my-1">
-                <span className="text-2xl font-bold font-mono tracking-tight text-white tabular-nums">
+              <div className="flex items-baseline space-x-1.5 my-1.5">
+                <span className="text-2xl sm:text-3xl font-bold font-mono tracking-tight text-[#1D302B] tabular-nums font-['Plus_Jakarta_Sans']">
                   {Math.round(result.totalDemandMWh).toLocaleString()}
                 </span>
-                <span className="text-xs font-semibold text-slate-400">MWh</span>
+                <span className="text-xs font-semibold text-[#75847D]">MWh</span>
               </div>
-              <span className="text-[11px] text-slate-500 block mt-1 font-mono">24h Required Volume</span>
+              <span className="text-[11px] text-[#75847D] block mt-1 font-mono">24h Delivery Requirement</span>
             </div>
 
-            <div className="bg-[#0D1322] border border-slate-800 rounded-xl p-4">
-              <span className="text-[10px] uppercase font-medium tracking-wider text-slate-400 block mb-1">
-                Day-Ahead Thermal Scheduled
+            <div className="bg-white border border-[#E0E9E2] rounded-2xl p-5 shadow-xs">
+              <span className="text-[10px] uppercase font-bold tracking-wider text-[#75847D] block mb-1">
+                Thermal Scheduled Day-Ahead
               </span>
-              <div className="flex items-baseline space-x-1.5 my-1">
-                <span className="text-2xl font-bold font-mono tracking-tight text-amber-400 tabular-nums">
+              <div className="flex items-baseline space-x-1.5 my-1.5">
+                <span className="text-2xl sm:text-3xl font-bold font-mono tracking-tight text-[#167D5A] tabular-nums font-['Plus_Jakarta_Sans']">
                   {Math.round(result.totalProcuredThermalMWh).toLocaleString()}
                 </span>
-                <span className="text-xs font-semibold text-slate-400">MWh</span>
+                <span className="text-xs font-semibold text-[#75847D]">MWh</span>
               </div>
-              <span className="text-[11px] text-slate-500 block mt-1 font-mono">
+              <span className="text-[11px] text-[#75847D] block mt-1 font-mono">
                 Wholesale: £{(result.totalWholesaleCostGBP / 1000).toFixed(0)}k @ £{wholesalePrice}/MWh
               </span>
             </div>
 
-            <div className="bg-[#0D1322] border border-slate-800 rounded-xl p-4">
-              <span className="text-[10px] uppercase font-medium tracking-wider text-slate-400 block mb-1">
+            <div className="bg-white border border-[#E0E9E2] rounded-2xl p-5 shadow-xs">
+              <span className="text-[10px] uppercase font-bold tracking-wider text-[#75847D] block mb-1">
                 Unhedged Short Position
               </span>
-              <div className="flex items-baseline space-x-1.5 my-1">
-                <span className="text-2xl font-bold font-mono tracking-tight text-rose-400 tabular-nums">
+              <div className="flex items-baseline space-x-1.5 my-1.5">
+                <span className="text-2xl sm:text-3xl font-bold font-mono tracking-tight text-amber-800 tabular-nums font-['Plus_Jakarta_Sans']">
                   {Math.round(result.totalShortMWh).toLocaleString()}
                 </span>
-                <span className="text-xs font-semibold text-rose-300">MWh</span>
+                <span className="text-xs font-semibold text-amber-800">MWh</span>
               </div>
-              <span className="text-[11px] text-slate-500 block mt-1 font-mono">Exposed to SBP Penalty</span>
+              <span className="text-[11px] text-[#75847D] block mt-1 font-mono">Exposed to SBP Penalty</span>
             </div>
 
-            <div className="bg-[#0D1322] border border-slate-800 rounded-xl p-4">
-              <span className="text-[10px] uppercase font-medium tracking-wider text-slate-400 block mb-1">
+            <div className="bg-white border border-[#E0E9E2] rounded-2xl p-5 shadow-xs">
+              <span className="text-[10px] uppercase font-bold tracking-wider text-[#75847D] block mb-1">
                 Derating Risk Protection
               </span>
-              <div className="flex items-baseline space-x-1.5 my-1">
-                <span className="text-2xl font-bold font-mono tracking-tight text-emerald-400 tabular-nums">
+              <div className="flex items-baseline space-x-1.5 my-1.5">
+                <span className="text-2xl sm:text-3xl font-bold font-mono tracking-tight text-[#167D5A] tabular-nums font-['Plus_Jakarta_Sans']">
                   {penaltySavings > 0 ? `+£${Math.round(penaltySavings).toLocaleString()}` : '£0'}
                 </span>
               </div>
-              <span className="text-[11px] text-emerald-400/90 block mt-1 font-mono">
+              <span className="text-[11px] text-[#167D5A] font-semibold block mt-1 font-mono">
                 {penaltySavings > 0 ? 'Balancing penalty savings' : 'Apply haircut to simulate'}
               </span>
             </div>
           </div>
 
           {/* Energy Stack Chart */}
-          <div className="bg-[#0D1322] border border-slate-800 rounded-xl p-5 shadow-sm">
-            <div className="pb-3 border-b border-slate-800 flex items-center justify-between">
+          <div className="bg-white border border-[#E0E9E2] rounded-2xl p-5 sm:p-6 shadow-xs">
+            <div className="pb-3 border-b border-[#E0E9E2] flex items-center justify-between">
               <div>
-                <h3 className="text-xs font-semibold uppercase tracking-wider text-white">
+                <h3 className="text-sm font-bold text-[#1D302B] font-['Plus_Jakarta_Sans']">
                   Energy Balance Stack: Consumer Demand vs Wind Contribution vs Thermal Procurement
                 </h3>
-                <p className="text-xs text-slate-400 mt-0.5">
+                <p className="text-xs text-[#75847D] mt-0.5">
                   Visualizing how day-ahead procurement covers consumer demand, compared against realized wind generation.
                 </p>
               </div>
             </div>
 
-            <div className="h-80 sm:h-96 mt-4">
+            <div className="h-80 sm:h-96 mt-5">
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={chartData} margin={{ top: 12, right: 15, left: 5, bottom: 15 }}>
                   <defs>
                     <linearGradient id="thermalStackGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#D97706" stopOpacity={0.6} />
-                      <stop offset="100%" stopColor="#D97706" stopOpacity={0.1} />
+                      <stop offset="0%" stopColor="#C2410C" stopOpacity={0.4} />
+                      <stop offset="100%" stopColor="#C2410C" stopOpacity={0.05} />
                     </linearGradient>
                     <linearGradient id="windStackGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#0284C7" stopOpacity={0.5} />
-                      <stop offset="100%" stopColor="#0284C7" stopOpacity={0.05} />
+                      <stop offset="0%" stopColor="#167D5A" stopOpacity={0.35} />
+                      <stop offset="100%" stopColor="#167D5A" stopOpacity={0.05} />
                     </linearGradient>
                   </defs>
-                  <CartesianGrid strokeDasharray="2 2" stroke="#1E293B" vertical={false} />
-                  <XAxis dataKey="hour" stroke="#64748B" fontSize={11} tickLine={false} />
-                  <YAxis stroke="#64748B" fontSize={11} tickLine={false} tickFormatter={(v) => `${v.toLocaleString()} MW`} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#E8EFEA" vertical={false} />
+                  <XAxis dataKey="hour" stroke="#75847D" fontSize={11} tickLine={false} />
+                  <YAxis stroke="#75847D" fontSize={11} tickLine={false} tickFormatter={(v) => `${v.toLocaleString()} MW`} />
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: '#0F172A',
-                      borderColor: '#334155',
+                      backgroundColor: '#FFFFFF',
+                      borderColor: '#E0E9E2',
                       borderRadius: '0.5rem',
                       fontSize: '11px',
-                      color: '#F8FAFC'
+                      color: '#1D302B'
                     }}
                     formatter={(v, name) => [`${v.toLocaleString()} MW`, name]}
                   />
@@ -270,7 +270,7 @@ export default function ProcurementSimulator() {
                     type="monotone"
                     dataKey="demand"
                     name="Consumer Electricity Demand"
-                    stroke="#FFFFFF"
+                    stroke="#1D302B"
                     strokeWidth={2.4}
                     dot={false}
                   />
@@ -280,7 +280,7 @@ export default function ProcurementSimulator() {
                     type="monotone"
                     dataKey="procuredThermal"
                     name="Day-Ahead Thermal Scheduled"
-                    stroke="#D97706"
+                    stroke="#C2410C"
                     fill="url(#thermalStackGrad)"
                   />
 
@@ -289,7 +289,7 @@ export default function ProcurementSimulator() {
                     type="monotone"
                     dataKey="deratedWind"
                     name="Derated Wind Forecast"
-                    stroke="#0284C7"
+                    stroke="#167D5A"
                     fill="url(#windStackGrad)"
                   />
 
@@ -298,7 +298,7 @@ export default function ProcurementSimulator() {
                     type="monotone"
                     dataKey="actualWind"
                     name="Realized Actual Wind"
-                    stroke="#10B981"
+                    stroke="#102A24"
                     strokeWidth={2}
                     strokeDasharray="4 4"
                     dot={false}
@@ -309,17 +309,17 @@ export default function ProcurementSimulator() {
           </div>
 
           {/* Audit Breakdown Table */}
-          <div className="bg-[#0D1322] border border-slate-800 rounded-xl p-5 shadow-sm overflow-hidden">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-white">
+          <div className="bg-white border border-[#E0E9E2] rounded-2xl p-5 shadow-xs overflow-hidden">
+            <div className="flex items-center justify-between pb-3 border-b border-[#E0E9E2]">
+              <h3 className="text-sm font-bold text-[#1D302B] font-['Plus_Jakarta_Sans']">
                 Hourly Dispatch & Cashout Penalty Audit
               </h3>
-              <span className="text-xs text-slate-400 font-mono">Wholesale: £{wholesalePrice}/MWh</span>
+              <span className="text-xs text-[#75847D] font-mono">Wholesale: £{wholesalePrice}/MWh</span>
             </div>
 
             <div className="overflow-x-auto mt-4">
               <table className="w-full text-left text-xs font-mono">
-                <thead className="bg-[#070A12] text-slate-400 uppercase text-[10px] tracking-wider border-b border-slate-800">
+                <thead className="bg-[#F0F4F1] text-[#1D302B] uppercase text-[10px] tracking-wider border-b border-[#E0E9E2]">
                   <tr>
                     <th className="py-2.5 px-3">Hour</th>
                     <th className="py-2.5 px-3 text-right">Demand</th>
@@ -330,18 +330,18 @@ export default function ProcurementSimulator() {
                     <th className="py-2.5 px-3 text-right">Hourly Total Cost</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-800/50 text-slate-300">
+                <tbody className="divide-y divide-[#E0E9E2] text-[#1D302B]">
                   {result.hourlyBreakdown.map((h) => (
-                    <tr key={h.hour} className="hover:bg-slate-800/30">
-                      <td className="py-2 px-3 font-semibold text-white">{String(h.hour).padStart(2, '0')}:00</td>
-                      <td className="py-2 px-3 text-right text-white">{Math.round(h.demandMW).toLocaleString()} MW</td>
-                      <td className="py-2 px-3 text-right text-cyan-300">{Math.round(h.deratedWindForecastMW).toLocaleString()} MW</td>
-                      <td className="py-2 px-3 text-right text-amber-400">{Math.round(h.procuredThermalMW).toLocaleString()} MW</td>
-                      <td className="py-2 px-3 text-right text-emerald-400">{Math.round(h.actualWindMW).toLocaleString()} MW</td>
-                      <td className={`py-2 px-3 text-right font-medium ${h.isShort ? 'text-rose-400' : 'text-blue-400'}`}>
+                    <tr key={h.hour} className="hover:bg-[#F7F9F5]">
+                      <td className="py-2 px-3 font-semibold text-[#1D302B]">{String(h.hour).padStart(2, '0')}:00</td>
+                      <td className="py-2 px-3 text-right text-[#1D302B] font-medium">{Math.round(h.demandMW).toLocaleString()} MW</td>
+                      <td className="py-2 px-3 text-right text-[#167D5A] font-semibold">{Math.round(h.deratedWindForecastMW).toLocaleString()} MW</td>
+                      <td className="py-2 px-3 text-right text-[#C2410C] font-semibold">{Math.round(h.procuredThermalMW).toLocaleString()} MW</td>
+                      <td className="py-2 px-3 text-right text-[#102A24] font-medium">{Math.round(h.actualWindMW).toLocaleString()} MW</td>
+                      <td className={`py-2 px-3 text-right font-medium ${h.isShort ? 'text-amber-800' : 'text-[#167D5A]'}`}>
                         {h.imbalanceMW > 0 ? '+' : ''}{Math.round(h.imbalanceMW).toLocaleString()} MW
                       </td>
-                      <td className="py-2 px-3 text-right text-slate-200">
+                      <td className="py-2 px-3 text-right text-[#1D302B]">
                         £{Math.round(h.simulatedTotalCostGBP).toLocaleString()}
                       </td>
                     </tr>

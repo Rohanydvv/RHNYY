@@ -1,40 +1,45 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --bg-terminal: #090D16;
-    --bg-surface: #0F172A;
-    --bg-card: #131D31;
-    --border-subtle: #1E293B;
-    --border-highlight: #334155;
-    --accent-primary: #06B6D4;
-    --accent-success: #10B981;
-    --accent-warning: #F59E0B;
-    --accent-danger: #F43F5E;
-  }
+@theme {
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --color-forest-dark: #102A24;
+  --color-warm-white: #F7F9F5;
+  --color-forest: #167D5A;
+  --color-lime: #B8E35A;
+  --color-text-primary: #1D302B;
+  --color-text-secondary: #75847D;
+  --color-border-subtle: #E0E9E2;
+}
 
+@layer base {
   body {
-    background-color: var(--bg-terminal);
-    color: #E2E8F0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #F7F9F5;
+    color: #1D302B;
+    font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Sleek terminal scrollbar */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #1D302B;
+  }
+
+  /* Refined clean scrollbars */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #0B1120;
+    background: #F7F9F5;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1E293B;
+    background: #CBD5E1;
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #334155;
+    background: #94A3B8;
   }
 }
 
