@@ -78,7 +78,7 @@ export default function ProcurementSimulator() {
           <div>
             <div className="flex items-center space-x-2">
               <Flame className="w-5 h-5 text-[#167D5A]" />
-              <h3 className="text-base font-bold text-[#1D302B] font-['Plus_Jakarta_Sans']">
+              <h3 className="text-base font-bold text-[#1D302B] font-['Outfit']">
                 Thermal Generation Sizing & Balancing Exposure Simulator
               </h3>
             </div>
@@ -173,12 +173,12 @@ export default function ProcurementSimulator() {
                 Consumer Demand Volume
               </span>
               <div className="flex items-baseline space-x-1.5 my-1.5">
-                <span className="text-2xl sm:text-3xl font-bold font-mono tracking-tight text-[#1D302B] tabular-nums font-['Plus_Jakarta_Sans']">
+                <span className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1D302B] tabular-nums font-['Outfit']">
                   {Math.round(result.totalDemandMWh).toLocaleString()}
                 </span>
                 <span className="text-xs font-semibold text-[#75847D]">MWh</span>
               </div>
-              <span className="text-[11px] text-[#75847D] block mt-1 font-mono">24h Delivery Requirement</span>
+              <span className="text-[11px] text-[#75847D] block mt-1">24h Delivery Requirement</span>
             </div>
 
             <div className="bg-white border border-[#E0E9E2] rounded-2xl p-5 shadow-xs">
@@ -186,12 +186,12 @@ export default function ProcurementSimulator() {
                 Thermal Scheduled Day-Ahead
               </span>
               <div className="flex items-baseline space-x-1.5 my-1.5">
-                <span className="text-2xl sm:text-3xl font-bold font-mono tracking-tight text-[#167D5A] tabular-nums font-['Plus_Jakarta_Sans']">
+                <span className="text-2xl sm:text-3xl font-bold tracking-tight text-[#167D5A] tabular-nums font-['Outfit']">
                   {Math.round(result.totalProcuredThermalMWh).toLocaleString()}
                 </span>
                 <span className="text-xs font-semibold text-[#75847D]">MWh</span>
               </div>
-              <span className="text-[11px] text-[#75847D] block mt-1 font-mono">
+              <span className="text-[11px] text-[#75847D] block mt-1">
                 Wholesale: £{(result.totalWholesaleCostGBP / 1000).toFixed(0)}k @ £{wholesalePrice}/MWh
               </span>
             </div>
@@ -201,12 +201,12 @@ export default function ProcurementSimulator() {
                 Unhedged Short Position
               </span>
               <div className="flex items-baseline space-x-1.5 my-1.5">
-                <span className="text-2xl sm:text-3xl font-bold font-mono tracking-tight text-amber-800 tabular-nums font-['Plus_Jakarta_Sans']">
+                <span className="text-2xl sm:text-3xl font-bold tracking-tight text-amber-800 tabular-nums font-['Outfit']">
                   {Math.round(result.totalShortMWh).toLocaleString()}
                 </span>
                 <span className="text-xs font-semibold text-amber-800">MWh</span>
               </div>
-              <span className="text-[11px] text-[#75847D] block mt-1 font-mono">Exposed to SBP Penalty</span>
+              <span className="text-[11px] text-[#75847D] block mt-1">Exposed to SBP Penalty</span>
             </div>
 
             <div className="bg-white border border-[#E0E9E2] rounded-2xl p-5 shadow-xs">
@@ -214,11 +214,11 @@ export default function ProcurementSimulator() {
                 Derating Risk Protection
               </span>
               <div className="flex items-baseline space-x-1.5 my-1.5">
-                <span className="text-2xl sm:text-3xl font-bold font-mono tracking-tight text-[#167D5A] tabular-nums font-['Plus_Jakarta_Sans']">
+                <span className="text-2xl sm:text-3xl font-bold tracking-tight text-[#167D5A] tabular-nums font-['Outfit']">
                   {penaltySavings > 0 ? `+£${Math.round(penaltySavings).toLocaleString()}` : '£0'}
                 </span>
               </div>
-              <span className="text-[11px] text-[#167D5A] font-semibold block mt-1 font-mono">
+              <span className="text-[11px] text-[#167D5A] font-semibold block mt-1">
                 {penaltySavings > 0 ? 'Balancing penalty savings' : 'Apply haircut to simulate'}
               </span>
             </div>
@@ -228,7 +228,7 @@ export default function ProcurementSimulator() {
           <div className="bg-white border border-[#E0E9E2] rounded-2xl p-5 sm:p-6 shadow-xs">
             <div className="pb-3 border-b border-[#E0E9E2] flex items-center justify-between">
               <div>
-                <h3 className="text-sm font-bold text-[#1D302B] font-['Plus_Jakarta_Sans']">
+                <h3 className="text-sm font-bold text-[#1D302B] font-['Outfit']">
                   Energy Balance Stack: Consumer Demand vs Wind Contribution vs Thermal Procurement
                 </h3>
                 <p className="text-xs text-[#75847D] mt-0.5">
@@ -311,7 +311,7 @@ export default function ProcurementSimulator() {
           {/* Audit Breakdown Table */}
           <div className="bg-white border border-[#E0E9E2] rounded-2xl p-5 shadow-xs overflow-hidden">
             <div className="flex items-center justify-between pb-3 border-b border-[#E0E9E2]">
-              <h3 className="text-sm font-bold text-[#1D302B] font-['Plus_Jakarta_Sans']">
+              <h3 className="text-sm font-bold text-[#1D302B] font-['Outfit']">
                 Hourly Dispatch & Cashout Penalty Audit
               </h3>
               <span className="text-xs text-[#75847D] font-mono">Wholesale: £{wholesalePrice}/MWh</span>

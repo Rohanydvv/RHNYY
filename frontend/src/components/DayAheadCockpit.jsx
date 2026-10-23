@@ -130,10 +130,10 @@ export default function DayAheadCockpit({ deliveryDate, setDeliveryDate }) {
       {/* Page Title & Pill Action Buttons (Matching image header) */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-bold text-[#1D302B] font-['Plus_Jakarta_Sans'] tracking-tight">
+          <h2 className="text-2xl font-bold text-[#1D302B] font-['Outfit'] tracking-tight">
             Day-Ahead Wind Cockpit
           </h2>
-          <p className="text-xs text-[#75847D] mt-0.5 font-['Inter']">
+          <p className="text-xs text-[#75847D] mt-0.5 font-['Outfit']">
             Monitor and optimize wholesale renewable power procurement prior to Day-Ahead gate closure.
           </p>
         </div>
@@ -237,13 +237,13 @@ export default function DayAheadCockpit({ deliveryDate, setDeliveryDate }) {
               </div>
               <div className="my-1">
                 <div className="flex items-baseline space-x-1.5">
-                  <span className="text-3xl font-extrabold font-mono tracking-tight text-white font-['Plus_Jakarta_Sans']">
+                  <span className="text-3xl font-extrabold tracking-tight text-white font-['Outfit'] tabular-nums">
                     {(summary.totalForecastMWh / 1000).toFixed(1)}
                   </span>
                   <span className="text-xs text-[#C0D4CC] font-semibold">GWh</span>
                 </div>
               </div>
-              <div className="text-[11px] text-[#A6C4B9] font-mono mt-2 pt-2 border-t border-white/10 flex items-center justify-between">
+              <div className="text-[11px] text-[#A6C4B9] mt-2 pt-2 border-t border-white/10 flex items-center justify-between">
                 <span>Peak: {Math.round(summary.peakForecastMW).toLocaleString()} MW</span>
                 <span className="text-[#B8E35A] font-semibold">Locked 11:00</span>
               </div>
@@ -259,13 +259,13 @@ export default function DayAheadCockpit({ deliveryDate, setDeliveryDate }) {
               </div>
               <div className="my-1">
                 <div className="flex items-baseline space-x-1.5">
-                  <span className="text-3xl font-extrabold font-mono tracking-tight text-[#1D302B] font-['Plus_Jakarta_Sans']">
+                  <span className="text-3xl font-extrabold tracking-tight text-[#1D302B] font-['Outfit'] tabular-nums">
                     {summary.totalActualMWh ? (summary.totalActualMWh / 1000).toFixed(1) : '—'}
                   </span>
                   <span className="text-xs text-[#75847D] font-semibold">GWh</span>
                 </div>
               </div>
-              <div className="text-[11px] text-[#75847D] font-mono mt-2 pt-2 border-t border-[#E8ECE6] flex items-center justify-between">
+              <div className="text-[11px] text-[#75847D] mt-2 pt-2 border-t border-[#E8ECE6] flex items-center justify-between">
                 <span>Avg: {summary.totalActualMWh ? Math.round(summary.totalActualMWh / 24).toLocaleString() : 0} MW</span>
                 <span className={summary.totalActualMWh && summary.totalActualMWh < summary.totalForecastMWh ? 'text-amber-700 font-semibold' : 'text-[#167D5A] font-semibold'}>
                   {summary.totalActualMWh ? `${((summary.totalActualMWh / summary.totalForecastMWh - 1) * 100).toFixed(1)}%` : ''}
@@ -283,13 +283,13 @@ export default function DayAheadCockpit({ deliveryDate, setDeliveryDate }) {
               </div>
               <div className="my-1">
                 <div className="flex items-baseline space-x-1.5">
-                  <span className="text-3xl font-extrabold font-mono tracking-tight text-[#167D5A] font-['Plus_Jakarta_Sans']">
+                  <span className="text-3xl font-extrabold tracking-tight text-[#167D5A] font-['Outfit'] tabular-nums">
                     {summary.maeMW ? Math.round(summary.maeMW).toLocaleString() : '—'}
                   </span>
                   <span className="text-xs text-[#75847D] font-semibold">MW</span>
                 </div>
               </div>
-              <div className="text-[11px] text-[#167D5A] font-semibold font-mono mt-2 pt-2 border-t border-[#E8ECE6] flex items-center justify-between">
+              <div className="text-[11px] text-[#167D5A] font-semibold mt-2 pt-2 border-t border-[#E8ECE6] flex items-center justify-between">
                 <span>WAPE: {summary.wapePct != null ? `${summary.wapePct.toFixed(1)}%` : '—'}</span>
                 <span>RMSE {summary.rmseMW ? Math.round(summary.rmseMW).toLocaleString() : '—'}</span>
               </div>
@@ -322,10 +322,10 @@ export default function DayAheadCockpit({ deliveryDate, setDeliveryDate }) {
             {/* Left Card: Circular Progress Ring (Matching image's "Savings Progress" card) */}
             <div className="lg:col-span-4 bg-white rounded-[24px] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E6ECE4] flex flex-col justify-between">
               <div className="flex items-center justify-between">
-                <h3 className="text-sm font-bold text-[#1D302B] font-['Plus_Jakarta_Sans']">
+                <h3 className="text-sm font-bold text-[#1D302B] font-['Outfit']">
                   Forecast Accuracy Progress
                 </h3>
-                <span className="text-xs text-[#75847D] font-mono font-semibold">Jan 2026</span>
+                <span className="text-xs text-[#75847D] font-semibold">Jan 2026</span>
               </div>
 
               {/* Donut Gauge (Matching image's 67% ring) */}
@@ -351,10 +351,10 @@ export default function DayAheadCockpit({ deliveryDate, setDeliveryDate }) {
                 </ResponsiveContainer>
                 {/* Center Percentage Label */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-                  <span className="text-3xl font-extrabold text-[#1D302B] font-mono font-['Plus_Jakarta_Sans']">
+                  <span className="text-4xl font-extrabold text-[#1D302B] font-['Outfit'] tracking-tight">
                     {accuracyPct}%
                   </span>
-                  <span className="text-[10px] uppercase font-bold text-[#75847D] tracking-wider -mt-0.5">
+                  <span className="text-[10px] uppercase font-bold text-[#75847D] tracking-wider mt-0.5">
                     Accuracy Score
                   </span>
                 </div>
@@ -396,7 +396,7 @@ export default function DayAheadCockpit({ deliveryDate, setDeliveryDate }) {
             <div className="lg:col-span-8 bg-white rounded-[24px] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E6ECE4]">
               <div className="flex items-center justify-between pb-3 border-b border-[#E6ECE4]">
                 <div>
-                  <h3 className="text-sm font-bold text-[#1D302B] font-['Plus_Jakarta_Sans']">
+                  <h3 className="text-sm font-bold text-[#1D302B] font-['Outfit']">
                     Day-Ahead Wind Forecast vs Realized Generation
                   </h3>
                   <p className="text-xs text-[#75847D] mt-0.5">
@@ -480,7 +480,7 @@ export default function DayAheadCockpit({ deliveryDate, setDeliveryDate }) {
             <div className="lg:col-span-7 bg-white rounded-[24px] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E6ECE4]">
               <div className="flex items-center justify-between pb-3 border-b border-[#E6ECE4]">
                 <div>
-                  <h3 className="text-sm font-bold text-[#1D302B] font-['Plus_Jakarta_Sans']">
+                  <h3 className="text-sm font-bold text-[#1D302B] font-['Outfit']">
                     Settlement Period Schedule Verification
                   </h3>
                   <p className="text-xs text-[#75847D] mt-0.5">
@@ -503,7 +503,7 @@ export default function DayAheadCockpit({ deliveryDate, setDeliveryDate }) {
                     className="bg-[#F7F9F6] border border-[#EBEFEA] rounded-[18px] p-3.5 flex items-center justify-between text-xs"
                   >
                     <div>
-                      <span className="font-bold text-[#1D302B] block font-mono">
+                      <span className="font-bold text-[#1D302B] block">
                         Hour {String(row.settlementHour).padStart(2, '0')}:00
                       </span>
                       <span className="text-[11px] text-[#75847D] block">
@@ -512,10 +512,10 @@ export default function DayAheadCockpit({ deliveryDate, setDeliveryDate }) {
                     </div>
 
                     <div className="text-right">
-                      <span className="font-mono font-bold text-[#167D5A] block">
+                      <span className="font-bold text-[#167D5A] block tabular-nums">
                         {Math.round(row.actualGeneration).toLocaleString()} MW
                       </span>
-                      <span className="text-[10px] text-[#75847D] block">
+                      <span className="text-[10px] text-[#75847D] block tabular-nums">
                         Fcst: {Math.round(row.forecastGeneration).toLocaleString()} MW
                       </span>
                     </div>
@@ -528,10 +528,10 @@ export default function DayAheadCockpit({ deliveryDate, setDeliveryDate }) {
             <div className="lg:col-span-5 bg-[#123E33] rounded-[24px] p-6 text-white shadow-[0_4px_24px_rgba(18,62,51,0.2)] flex flex-col justify-between relative overflow-hidden">
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-white font-['Plus_Jakarta_Sans']">
+                  <span className="text-xs font-bold text-white font-['Outfit']">
                     Trading Risk Mitigation
                   </span>
-                  <span className="text-[10px] font-bold uppercase tracking-wider bg-[#B8E35A] text-[#123E33] px-2.5 py-0.5 rounded-full font-mono">
+                  <span className="text-[10px] font-bold uppercase tracking-wider bg-[#B8E35A] text-[#123E33] px-2.5 py-0.5 rounded-full font-semibold">
                     SAFETY BUFFER
                   </span>
                 </div>
@@ -544,7 +544,7 @@ export default function DayAheadCockpit({ deliveryDate, setDeliveryDate }) {
                     <span className="text-[10px] uppercase font-bold text-[#A6C4B9] tracking-wider block">
                       RECOMMENDED BUFFER
                     </span>
-                    <span className="text-2xl font-extrabold text-white font-mono block mt-0.5 font-['Plus_Jakarta_Sans']">
+                    <span className="text-2xl font-extrabold text-white block mt-0.5 font-['Outfit'] tracking-tight">
                       15% <span className="text-xs font-normal text-[#C0D4CC]">Derate</span>
                     </span>
                   </div>
@@ -553,7 +553,7 @@ export default function DayAheadCockpit({ deliveryDate, setDeliveryDate }) {
                     <span className="text-[10px] uppercase font-bold text-[#A6C4B9] tracking-wider block">
                       PROJECTED SAVINGS
                     </span>
-                    <span className="text-2xl font-extrabold text-[#B8E35A] font-mono block mt-0.5 font-['Plus_Jakarta_Sans']">
+                    <span className="text-2xl font-extrabold text-[#B8E35A] block mt-0.5 font-['Outfit'] tracking-tight">
                       £76.9k <span className="text-xs font-normal text-[#C0D4CC]">/day</span>
                     </span>
                   </div>
@@ -563,7 +563,7 @@ export default function DayAheadCockpit({ deliveryDate, setDeliveryDate }) {
               <div>
                 <button
                   onClick={() => setShowEvolution(!showEvolution)}
-                  className="w-full bg-[#1A4F40] hover:bg-[#236352] text-white font-bold text-xs py-2.5 px-4 rounded-full text-center transition-colors cursor-pointer shadow-xs"
+                  className="w-full bg-[#1A4F40] hover:bg-[#236352] text-white font-bold text-xs py-2.5 px-4 rounded-full text-center transition-colors cursor-pointer shadow-xs font-['Outfit']"
                 >
                   View NWP Model Progression
                 </button>
@@ -576,7 +576,7 @@ export default function DayAheadCockpit({ deliveryDate, setDeliveryDate }) {
             <div className="bg-white rounded-[24px] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E6ECE4]">
               <div className="pb-3 border-b border-[#E6ECE4] flex items-center justify-between">
                 <div>
-                  <h4 className="text-sm font-bold text-[#1D302B] font-['Plus_Jakarta_Sans'] flex items-center space-x-2">
+                  <h4 className="text-sm font-bold text-[#1D302B] font-['Outfit'] flex items-center space-x-2">
                     <Layers className="w-4 h-4 text-[#167D5A]" />
                     <span>NWP Weather Model Evolution leading up to Gate Closure</span>
                   </h4>

@@ -105,7 +105,7 @@ export default function TopNavbar({ activeTab, setActiveTab, deliveryDate, setDe
         {/* Interactive Dropdown Results */}
         {isFocused && (
           <div className="absolute left-0 right-0 top-12 mt-1 bg-white rounded-[20px] p-2.5 shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#E6ECE4] z-50 text-xs animate-in fade-in slide-in-from-top-1 duration-150">
-            <div className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-[#91A299] font-['Plus_Jakarta_Sans']">
+            <div className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-[#91A299] font-['Outfit']">
               Quick Navigation & Insights
             </div>
             <div className="space-y-1">
@@ -143,9 +143,9 @@ export default function TopNavbar({ activeTab, setActiveTab, deliveryDate, setDe
       {/* Right Controls & Profile Pill (Aligned to same level) */}
       <div className="flex items-center space-x-2.5 self-end sm:self-auto shrink-0">
         {/* Gate Closure Pill */}
-        <div className="hidden lg:flex items-center space-x-1.5 bg-white rounded-full px-4 h-11 border border-[#E6ECE4] shadow-xs text-xs font-mono font-medium text-[#1D302B]">
+        <div className="hidden lg:flex items-center space-x-1.5 bg-white rounded-full px-4 h-11 border border-[#E6ECE4] shadow-xs text-xs font-medium text-[#1D302B]">
           <Clock className="w-3.5 h-3.5 text-[#167D5A]" />
-          <span>Cutoff: <strong>11:00 GMT (D-1)</strong></span>
+          <span>Cutoff: <strong className="font-semibold text-[#167D5A]">11:00 GMT (D-1)</strong></span>
         </div>
 
         {/* Live Status Icon */}
@@ -155,11 +155,11 @@ export default function TopNavbar({ activeTab, setActiveTab, deliveryDate, setDe
 
         {/* Desk Profile Badge */}
         <div className="flex items-center space-x-2.5 bg-white rounded-full pl-2.5 pr-4 h-11 border border-[#E6ECE4] shadow-xs">
-          <div className="w-7 h-7 rounded-full bg-[#EAF3EC] text-[#167D5A] flex items-center justify-center font-bold text-xs font-['Plus_Jakarta_Sans']">
+          <div className="w-7 h-7 rounded-full bg-[#EAF3EC] text-[#167D5A] flex items-center justify-center font-bold text-xs font-['Outfit']">
             UK
           </div>
           <div className="text-left leading-tight">
-            <span className="text-xs font-bold text-[#1D302B] block font-['Plus_Jakarta_Sans']">Wholesale Desk</span>
+            <span className="text-xs font-bold text-[#1D302B] block font-['Outfit']">Wholesale Desk</span>
             <span className="text-[10px] text-[#75847D] block -mt-0.5">Procurement Lead</span>
           </div>
         </div>

@@ -14,7 +14,7 @@ export default function App() {
   const [isTechLeadOpen, setIsTechLeadOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#EEF2ED] text-[#1D302B] p-5 sm:p-6 lg:p-7 flex items-start gap-5 sm:gap-6 font-['Inter'] antialiased selection:bg-[#B8E35A] selection:text-[#102A24]">
+    <div className="min-h-screen bg-[#EEF2ED] text-[#1D302B] p-5 sm:p-6 lg:p-7 flex items-start gap-5 sm:gap-6 font-['Outfit'] antialiased selection:bg-[#B8E35A] selection:text-[#102A24]">
       {/* Floating Left Sidebar (Exact same top level as search bar, equal 4-edge margins) */}
       <Sidebar
         activeTab={activeTab}

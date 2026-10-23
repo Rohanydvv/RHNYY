@@ -22,7 +22,7 @@ export default function TechLeadReviewModal({ isOpen, onClose }) {
                   Technical Architecture Specification · Ref ARCH-VP-01
                 </span>
               </div>
-              <h2 className="text-base font-bold text-[#1D302B] tracking-tight font-['Plus_Jakarta_Sans']">
+              <h2 className="text-base font-bold text-[#1D302B] tracking-tight font-['Outfit']">
                 Software Design & Implementation Review
               </h2>
             </div>
@@ -36,7 +36,7 @@ export default function TechLeadReviewModal({ isOpen, onClose }) {
         </div>
 
         {/* Content */}
-        <div className="p-6 sm:p-8 space-y-6 text-xs text-[#1D302B] leading-relaxed font-['Inter']">
+        <div className="p-6 sm:p-8 space-y-6 text-xs text-[#1D302B] leading-relaxed font-['Outfit']">
           {/* Architecture Matrix */}
           <div>
             <h3 className="text-xs font-bold uppercase tracking-wider text-[#75847D] mb-2 font-mono">

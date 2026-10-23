@@ -22,7 +22,7 @@ export default function ClientPitchModal({ isOpen, onClose }) {
                   Executive Briefing Dossier · Ref VP-UK-2026-01
                 </span>
               </div>
-              <h2 className="text-base font-bold text-[#1D302B] tracking-tight font-['Plus_Jakarta_Sans']">
+              <h2 className="text-base font-bold text-[#1D302B] tracking-tight font-['Outfit']">
                 VortexPower: Wholesale Day-Ahead Renewable Procurement Platform
               </h2>
             </div>
@@ -36,7 +36,7 @@ export default function ClientPitchModal({ isOpen, onClose }) {
         </div>
 
         {/* Dossier Content */}
-        <div className="p-6 sm:p-8 space-y-6 text-xs text-[#1D302B] leading-relaxed font-['Inter']">
+        <div className="p-6 sm:p-8 space-y-6 text-xs text-[#1D302B] leading-relaxed font-['Outfit']">
           {/* Executive Summary Callout */}
           <div className="bg-[#F7F9F5] border-l-3 border-[#167D5A] border-y border-r border-[#E0E9E2] p-5 rounded-r-2xl">
             <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-[#167D5A] block mb-1">

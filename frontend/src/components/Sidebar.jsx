@@ -28,7 +28,7 @@ export default function Sidebar({ activeTab, setActiveTab, onOpenPitch, onOpenTe
             <Wind className="w-5 h-5 text-[#B8E35A] stroke-[2.2]" />
           </div>
           <div>
-            <span className="font-bold text-base text-[#1D302B] font-['Plus_Jakarta_Sans'] tracking-tight block">
+            <span className="font-bold text-base text-[#1D302B] font-['Outfit'] tracking-tight block">
               VortexPower
             </span>
             <span className="text-[11px] text-[#75847D] font-medium block -mt-0.5">
@@ -39,7 +39,7 @@ export default function Sidebar({ activeTab, setActiveTab, onOpenPitch, onOpenTe
 
         {/* Primary Menu Navigation */}
         <div>
-          <span className="text-[10px] font-bold uppercase tracking-wider text-[#91A299] px-2.5 mb-2 block font-['Plus_Jakarta_Sans']">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-[#91A299] px-2.5 mb-2 block font-['Outfit']">
             Menu
           </span>
           <nav className="space-y-1.5">
@@ -66,7 +66,7 @@ export default function Sidebar({ activeTab, setActiveTab, onOpenPitch, onOpenTe
 
         {/* January 2026 Scenarios */}
         <div>
-          <span className="text-[10px] font-bold uppercase tracking-wider text-[#91A299] px-2.5 mb-2 block font-['Plus_Jakarta_Sans']">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-[#91A299] px-2.5 mb-2 block font-['Outfit']">
             Case Studies
           </span>
           <div className="space-y-1">
@@ -117,7 +117,7 @@ export default function Sidebar({ activeTab, setActiveTab, onOpenPitch, onOpenTe
         <span className="text-[10px] uppercase font-bold tracking-wider text-[#B8E35A] block mb-1">
           Trading Desk Intel
         </span>
-        <h4 className="text-xs font-bold text-white font-['Plus_Jakarta_Sans'] leading-tight">
+        <h4 className="text-xs font-bold text-white font-['Outfit'] leading-tight">
           Executive Dossiers
         </h4>
         <p className="text-[11px] text-[#C0D4CC] mt-1 leading-snug">

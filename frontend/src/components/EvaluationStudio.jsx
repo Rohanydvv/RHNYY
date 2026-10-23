@@ -70,10 +70,10 @@ export default function EvaluationStudio() {
       {/* Page Title & Preset Filters */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-bold text-[#1D302B] font-['Plus_Jakarta_Sans'] tracking-tight">
+          <h2 className="text-2xl font-bold text-[#1D302B] font-['Outfit'] tracking-tight">
             Forecast Accuracy & Quantitative Risk Studio
           </h2>
-          <p className="text-xs text-[#75847D] mt-0.5 font-['Inter']">
+          <p className="text-xs text-[#75847D] mt-0.5 font-['Outfit']">
             Empirical statistical evaluation across all 744 trading hours of January 2026.
           </p>
         </div>
@@ -92,7 +92,7 @@ export default function EvaluationStudio() {
               <button
                 key={p.id}
                 onClick={() => setPresetRange(p.id)}
-                className={`text-xs px-3.5 py-1.5 rounded-full font-mono transition-all cursor-pointer ${
+                className={`text-xs px-3.5 py-1.5 rounded-full font-['Outfit'] font-medium transition-all cursor-pointer ${
                   isActive
                     ? 'bg-[#123E33] text-white font-semibold shadow-xs'
                     : 'bg-white text-[#1D302B] border border-[#E6ECE4] hover:bg-[#F2F5F0]'
@@ -119,13 +119,13 @@ export default function EvaluationStudio() {
               </div>
               <div className="my-1">
                 <div className="flex items-baseline space-x-1.5">
-                  <span className="text-3xl font-extrabold font-mono tracking-tight text-white font-['Plus_Jakarta_Sans']">
+                  <span className="text-3xl font-extrabold tracking-tight text-white font-['Outfit'] tabular-nums">
                     {Math.round(metrics.maeMW).toLocaleString()}
                   </span>
                   <span className="text-xs text-[#C0D4CC] font-semibold">MW</span>
                 </div>
               </div>
-              <div className="text-[11px] text-[#A6C4B9] font-mono mt-2 pt-2 border-t border-white/10 flex items-center justify-between">
+              <div className="text-[11px] text-[#A6C4B9] mt-2 pt-2 border-t border-white/10 flex items-center justify-between">
                 <span>Capacity nMAE: {metrics.nmaePct.toFixed(1)}%</span>
                 <span className="text-[#B8E35A] font-semibold">{metrics.sampleHoursCount} Hours</span>
               </div>
@@ -141,13 +141,13 @@ export default function EvaluationStudio() {
               </div>
               <div className="my-1">
                 <div className="flex items-baseline space-x-1.5">
-                  <span className="text-3xl font-extrabold font-mono tracking-tight text-[#1D302B] font-['Plus_Jakarta_Sans']">
+                  <span className="text-3xl font-extrabold tracking-tight text-[#1D302B] font-['Outfit'] tabular-nums">
                     {Math.round(metrics.rmseMW).toLocaleString()}
                   </span>
                   <span className="text-xs text-[#75847D] font-semibold">MW</span>
                 </div>
               </div>
-              <div className="text-[11px] text-[#75847D] font-mono mt-2 pt-2 border-t border-[#E8ECE6] flex items-center justify-between">
+              <div className="text-[11px] text-[#75847D] mt-2 pt-2 border-t border-[#E8ECE6] flex items-center justify-between">
                 <span>Peak Hour MAE: {Math.round(metrics.peakHoursMaeMW).toLocaleString()} MW</span>
                 <span>Volatility</span>
               </div>
@@ -163,13 +163,13 @@ export default function EvaluationStudio() {
               </div>
               <div className="my-1">
                 <div className="flex items-baseline space-x-1.5">
-                  <span className="text-3xl font-extrabold font-mono tracking-tight text-amber-800 font-['Plus_Jakarta_Sans']">
+                  <span className="text-3xl font-extrabold tracking-tight text-amber-800 font-['Outfit'] tabular-nums">
                     +{Math.round(metrics.biasMW).toLocaleString()}
                   </span>
                   <span className="text-xs text-[#75847D] font-semibold">MW</span>
                 </div>
               </div>
-              <div className="text-[11px] text-amber-800 font-bold font-mono mt-2 pt-2 border-t border-[#E8ECE6] flex items-center justify-between">
+              <div className="text-[11px] text-amber-800 font-bold mt-2 pt-2 border-t border-[#E8ECE6] flex items-center justify-between">
                 <span>{metrics.overForecastHoursPct}% Over-forecast</span>
                 <span>Short Risk</span>
               </div>
@@ -185,12 +185,12 @@ export default function EvaluationStudio() {
               </div>
               <div className="my-1">
                 <div className="flex items-baseline space-x-1.5">
-                  <span className="text-3xl font-extrabold font-mono tracking-tight text-[#167D5A] font-['Plus_Jakarta_Sans']">
+                  <span className="text-3xl font-extrabold tracking-tight text-[#167D5A] font-['Outfit'] tabular-nums">
                     {metrics.wapePct.toFixed(1)}%
                   </span>
                 </div>
               </div>
-              <div className="text-[11px] text-[#167D5A] font-semibold font-mono mt-2 pt-2 border-t border-[#E8ECE6] flex items-center justify-between">
+              <div className="text-[11px] text-[#167D5A] font-semibold mt-2 pt-2 border-t border-[#E8ECE6] flex items-center justify-between">
                 <span>Accuracy {(100 - metrics.wapePct).toFixed(1)}%</span>
                 <span>{metrics.totalForecastTWh} TWh</span>
               </div>
@@ -203,7 +203,7 @@ export default function EvaluationStudio() {
             <div className="bg-white rounded-[24px] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E6ECE4]">
               <div className="pb-3 border-b border-[#E6ECE4] flex items-center justify-between">
                 <div>
-                  <h3 className="text-sm font-bold text-[#1D302B] font-['Plus_Jakarta_Sans']">
+                  <h3 className="text-sm font-bold text-[#1D302B] font-['Outfit']">
                     Diurnal Error Profile (00:00 to 23:00 GMT)
                   </h3>
                   <p className="text-xs text-[#75847D] mt-0.5">
@@ -250,7 +250,7 @@ export default function EvaluationStudio() {
             <div className="bg-white rounded-[24px] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E6ECE4]">
               <div className="pb-3 border-b border-[#E6ECE4] flex items-center justify-between">
                 <div>
-                  <h3 className="text-sm font-bold text-[#1D302B] font-['Plus_Jakarta_Sans']">
+                  <h3 className="text-sm font-bold text-[#1D302B] font-['Outfit']">
                     Forecast Error Frequency Distribution
                   </h3>
                   <p className="text-xs text-[#75847D] mt-0.5">
