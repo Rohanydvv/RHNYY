@@ -31,6 +31,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Flexible path normalization middleware for serverless deployments
+@app.middleware("http")
+async def normalize_api_path(request, call_next):
+    path = request.scope.get("path", "")
+    if path.startswith(("/forecasts", "/evaluation", "/procurement", "/system", "/health")):
+        request.scope["path"] = "/api" + path
+    return await call_next(request)
+
 # Include Routers
 app.include_router(forecasts.router)
 app.include_router(evaluation.router)
@@ -38,6 +46,7 @@ app.include_router(procurement.router)
 app.include_router(system.router)
 
 @app.get("/api/health")
+@app.get("/health")
 def health_check():
     return {"status": "ok", "service": "wind-procurement-analytics", "version": "1.0.0"}
 

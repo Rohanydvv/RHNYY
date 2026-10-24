@@ -6,10 +6,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 ROOT_DIR = BASE_DIR.parent
 
 # Database configuration
-# Look in backend/data first, then root data, fallback to /app/data
+# Search in multiple potential locations (local dev, docker, and serverless runtime)
 candidate_dbs = [
     BASE_DIR / "data" / "elexon_wind.db",
+    ROOT_DIR / "backend" / "data" / "elexon_wind.db",
     ROOT_DIR / "data" / "elexon_wind.db",
+    Path("/var/task/backend/data/elexon_wind.db"),
+    Path("/var/task/data/elexon_wind.db"),
     Path("/app/data/elexon_wind.db")
 ]
 

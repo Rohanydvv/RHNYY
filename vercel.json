@@ -1,11 +1,11 @@
 {
-  "buildCommand": "cd frontend && npm install --legacy-peer-deps && npm run build",
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd frontend && npm install && npm run build",
   "outputDirectory": "frontend/dist",
-  "cleanUrls": true,
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://vortexpower-uk.herokuapp.com/api/$1"
+      "destination": "/api/index.py"
     },
     {
       "source": "/(.*)",

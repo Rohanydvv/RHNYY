@@ -1,4 +1,4 @@
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_BASE || '/api';
 
 export async function fetchDayAheadForecast(deliveryDate, cutoffHour = 11, cutoffMinute = 0) {
   const url = `${API_BASE}/forecasts/day-ahead?deliveryDate=${deliveryDate}&cutoffHour=${cutoffHour}&cutoffMinute=${cutoffMinute}`;
